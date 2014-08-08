@@ -13,6 +13,11 @@
 		AEE78C3C1994109300A276B2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE78C3B1994109300A276B2 /* UIKit.framework */; };
 		AEE78C6A1994140700A276B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE78C691994140700A276B2 /* main.m */; };
 		AEE78C6E1994141200A276B2 /* RMBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE78C6D1994141200A276B2 /* RMBAppDelegate.m */; };
+		AEE78C721994188200A276B2 /* UIAlertView+prompt.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE78C711994188200A276B2 /* UIAlertView+prompt.m */; };
+		AEE78C751994195900A276B2 /* UIAlertView+confirmation.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE78C741994195900A276B2 /* UIAlertView+confirmation.m */; };
+		AEE78C791994264900A276B2 /* RMBPromptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE78C781994264900A276B2 /* RMBPromptViewController.m */; };
+		AEE78C7C1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE78C7B1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.m */; };
+		AEE78C7F1994D24C00A276B2 /* UINavigationItem+indicateActivityWithSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE78C7E1994D24C00A276B2 /* UINavigationItem+indicateActivityWithSignal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,16 @@
 		AEE78C691994140700A276B2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = SOURCE_ROOT; };
 		AEE78C6C1994141200A276B2 /* RMBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBAppDelegate.h; sourceTree = "<group>"; };
 		AEE78C6D1994141200A276B2 /* RMBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBAppDelegate.m; sourceTree = "<group>"; };
+		AEE78C701994188200A276B2 /* UIAlertView+prompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+prompt.h"; sourceTree = "<group>"; };
+		AEE78C711994188200A276B2 /* UIAlertView+prompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+prompt.m"; sourceTree = "<group>"; };
+		AEE78C731994195900A276B2 /* UIAlertView+confirmation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+confirmation.h"; sourceTree = "<group>"; };
+		AEE78C741994195900A276B2 /* UIAlertView+confirmation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+confirmation.m"; sourceTree = "<group>"; };
+		AEE78C771994264900A276B2 /* RMBPromptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBPromptViewController.h; sourceTree = "<group>"; };
+		AEE78C781994264900A276B2 /* RMBPromptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBPromptViewController.m; sourceTree = "<group>"; };
+		AEE78C7A1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+animateWithSignal.h"; sourceTree = "<group>"; };
+		AEE78C7B1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+animateWithSignal.m"; sourceTree = "<group>"; };
+		AEE78C7D1994D24C00A276B2 /* UINavigationItem+indicateActivityWithSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+indicateActivityWithSignal.h"; sourceTree = "<group>"; };
+		AEE78C7E1994D24C00A276B2 /* UINavigationItem+indicateActivityWithSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+indicateActivityWithSignal.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +63,8 @@
 		AEE78C2B1994109300A276B2 = {
 			isa = PBXGroup;
 			children = (
+				AEE78C761994263300A276B2 /* View Controllers */,
+				AEE78C6F1994184D00A276B2 /* Categories */,
 				AEE78C6B1994141200A276B2 /* Classes */,
 				AEE78C3E1994109300A276B2 /* Supporting Files */,
 				AEE78C361994109300A276B2 /* Frameworks */,
@@ -95,6 +112,30 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		AEE78C6F1994184D00A276B2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AEE78C701994188200A276B2 /* UIAlertView+prompt.h */,
+				AEE78C711994188200A276B2 /* UIAlertView+prompt.m */,
+				AEE78C731994195900A276B2 /* UIAlertView+confirmation.h */,
+				AEE78C741994195900A276B2 /* UIAlertView+confirmation.m */,
+				AEE78C7A1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.h */,
+				AEE78C7B1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.m */,
+				AEE78C7D1994D24C00A276B2 /* UINavigationItem+indicateActivityWithSignal.h */,
+				AEE78C7E1994D24C00A276B2 /* UINavigationItem+indicateActivityWithSignal.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		AEE78C761994263300A276B2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEE78C771994264900A276B2 /* RMBPromptViewController.h */,
+				AEE78C781994264900A276B2 /* RMBPromptViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,7 +154,7 @@
 			dependencies = (
 			);
 			name = RACItUp;
-			productName = "RACItUp";
+			productName = RACItUp;
 			productReference = AEE78C341994109300A276B2 /* RACItUp.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -193,7 +234,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE78C6E1994141200A276B2 /* RMBAppDelegate.m in Sources */,
+				AEE78C721994188200A276B2 /* UIAlertView+prompt.m in Sources */,
+				AEE78C751994195900A276B2 /* UIAlertView+confirmation.m in Sources */,
+				AEE78C7C1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.m in Sources */,
 				AEE78C6A1994140700A276B2 /* main.m in Sources */,
+				AEE78C7F1994D24C00A276B2 /* UINavigationItem+indicateActivityWithSignal.m in Sources */,
+				AEE78C791994264900A276B2 /* RMBPromptViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

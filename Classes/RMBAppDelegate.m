@@ -8,6 +8,8 @@
 
 #import "RMBAppDelegate.h"
 
+#import "RMBPromptViewController.h"
+
 @implementation RMBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -15,6 +17,7 @@
 
   // Override point for customization after application launch.
   self.window.backgroundColor = [UIColor whiteColor];
+  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[RMBPromptViewController new]];
   [self.window makeKeyAndVisible];
 
   return YES;
