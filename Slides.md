@@ -5,20 +5,37 @@
 
 # ReactiveCocoa
 
+^3.0 coming which will deprectate some of this
+
 - Functional reactive programming framework for ObjC
-- Currently 2.0 with 3.0 coming which will deprectate some of this
+- Currently 2.0
 - Inspired by Reactive Extensions
 - Alternative to traditional KVO paradigm
-- Adds some handy macros for short-handing common patterns
-- Adds categories on existing classes, including UIKit
-- Safe and happy approach to mem management
+
+***
+
+# ReactiveCocoa
+
+^Macros help with short-handing common patterns as we'll see
+
+^Categories on existing classes, including UIKit
+
+^Signals conform to ARC etc
+
+- Handy macros
+- Handy categories
+- Good memory management semantics
 - Tuples!
-- Good for:
-	- Handling asynchronous or event-driven data sources
-	- Chaining dependent operations
-	- Parallelizing independent work
-	- Simplifying collection transformations
-	- State management
+
+***
+
+# ReactiveCocoa is good for you :+1:
+
+- Handle asynchronous / event-driven data sources
+- Chain dependent operations
+- Parallelise independent work
+- Simplify collection transformations
+- Manage state
 
 ***
 
@@ -34,15 +51,39 @@ Three types of event:
 
 ***
 
+# Subscription
+
+Each type of event received from a signal is delivered to its subscribers.
+
+Can be as simple as a block:
+
+```objectivec
+[[[RACSignal empty] delay:5] subscribeCompleted:^{
+	NSLog(@"Time's up!");
+}];
+```
+
+***
+
 # Example (KVO)
 
 ```objectivec
 RACObserve(self, firstName)
 ```
-returns an signal representing future changes
+returns a signal representing future changes
 to the `firstName` property.
 
 ***
+
+# Example (KVO)
+
+This can be subscribed to as shown before
+
+```objectivec
+[RACObserve(self, name) subscribeNext:^(NSString *name) {
+	NSLog(@"Changed name to: %@", name);
+}];
+```
 
 # Example (KVO)
 
@@ -54,26 +95,6 @@ RAC(self, fullName) = [RACSignal combineLatest:@[
   RACObserve(self, lastName)
 ] reduce:^(NSString *firstName, NSString *lastName) {
   return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-}];
-```
-
-***
-
-# Subscription
-
-Each type of event received from a signal is delivered to its subscribers.
-
-Can be as simple as a block:
-
-```objectivec
-[RACObserve(self, name) subscribeNext:^(NSString *name) {
-  NSLog(@"Changed name to: %@", name);
-}];
-```
-
-```objectivec
-[[[RACSignal empty] delay:5] subscribeCompleted:^{
-  NSLog(@"Time's up!");
 }];
 ```
 
