@@ -150,4 +150,105 @@ RACSignal *keyboardShowingSignal = [RACSignal merge:@[
 
 // Hide someView while the keyboard displays
 RAC(self.someView, hidden) = keyboardShowingSignal;
+
 ```
+
+***
+
+# Tuples
+
+- Combined signals can be reduced
+- Result is a tuple with the same number of arguments as input signals
+
+```objectivec
+EXAMPLE NEEDED
+```
+
+***
+
+# Break away from the delegate pattern
+
+For example:
+
+- UIControlEvent
+- UIGestureRecogniser
+- UIAlertView
+
+```objectivec
+EXAMPLE NEEDED
+```
+
+***
+
+# Target:selector pattern is for the bin too :thumbsdown:
+
+- UIControlEventTouchUpInside
+
+```objectivec
+EXAMPLE NEEDED
+```
+
+***
+
+# Logic
+
+- if:else:, and, or, not & switch as signals!
+
+```objectivec
+EXAMPLES NEEDED
+```
+
+***
+
+# Collections
+
+- Some other libs provide collection operations, e.g. Underscore
+- Why not use both?
+- filtering, mapping
+- Working with signals allows for chaining though
+- Collections are treated as streams
+- Execution is lazy
+
+```objectivec
+EXAMPLES NEEDED
+```
+
+***
+
+# Schedulers
+
+- Main (Background by default?)
+- Delays
+- Intervals
+- Repeats
+- Retrys
+- Throttling
+
+```objectivec
+EXAMPLES NEEDED
+```
+
+***
+
+# The chain is your friend
+
+Chaining dependent, asynchronous operations allows for streamlining complex tasks
+
+For example, a network operation that needs to do a number of fetches
+
+Or a background process that must write files, delete duplicates and then upload
+
+
+```objectivec
+SHOW A NETWORKING EXAMPLE WITH AFNETWORKING
+```
+
+***
+
+# Pitfalls
+
+Some places, ReactiveCocoa doesn't offer **huge** benefit as it requires additonal management
+
+For example table view cell reuse
+
+Or timers: the timing aspect seems well suited but not for precision
