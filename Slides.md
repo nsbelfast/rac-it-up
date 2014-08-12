@@ -51,6 +51,13 @@ Three types of event:
 
 ***
 
+NOTE: I wonder should we try and keep code to an absolute minimum in the slides
+
+We can maybe explain concepts briefly through text/diagrams and then code right through an example?
+
+
+***
+
 # Subscription
 
 Each type of event received from a signal is delivered to its subscribers.
