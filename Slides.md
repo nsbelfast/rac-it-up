@@ -168,11 +168,14 @@ EXAMPLE NEEDED
 
 # Break away from the delegate pattern
 
+^We'll probably get a solution for the return-value-delegate-type issue in 3.0
+
 For example:
 
 - UIControlEvent
 - UIGestureRecogniser
 - UIAlertView
+- Note: can't be used if delegate method returns a value :pensive:
 
 ```objectivec
 EXAMPLE NEEDED
@@ -180,7 +183,7 @@ EXAMPLE NEEDED
 
 ***
 
-# Target:selector pattern is for the bin too :thumbsdown:
+# Target:selector pattern is for the bin :thumbsdown:
 
 - UIControlEventTouchUpInside
 
