@@ -182,15 +182,12 @@ For example:
 ***
 
 
-
-
-
 # Disposables
 
-A subscription wraps a number of disposables (i.e. cleanup to be performed when
-the subscription ends).
+^(i.e. cleanup to be performed when the subscription ends).
+^From the previous examples, removing KVO or notification observers added.
 
-From the previous examples, removing KVO or notification observers added.
+A subscription wraps a number of disposables 
 
 Can be useful for cancelling any ongoing work.
 
@@ -250,3 +247,13 @@ Some places, ReactiveCocoa doesn't offer **huge** benefit as it requires additon
 For example table view cell reuse
 
 Or timers: the timing aspect seems well suited but not for precision
+
+
+***
+
+# Extensions
+
+- ReactiveCoreData
+
+etc..
+
