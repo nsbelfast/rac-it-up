@@ -20,21 +20,17 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  // 1. A basic signal with a subscription
+  // 3. Whole form validation
   
   RACSignal *emailTextSignal = [self.emailTextField rac_textSignal];
+  RACSignal *passwordTextSignal = [self.passwordTextField rac_textSignal];
   
-  // 2. Validate the email as the user types
+  RACSignal *formIsValid = [RACSignal combineLatest:@[emailTextSignal, passwordTextSignal]
+                                             reduce:^id(NSString *emailText, NSString *passwordText) {
+                                               return @(emailText.length > 0 && passwordText.length > 0);
+                                             }];
   
-  RACSignal *emailIsValidSignal = [emailTextSignal map:^id(NSString *value) {
-    return @(value.length > 0);
-  }];
-  
-  [emailIsValidSignal subscribeNext:^(NSNumber *valid) {
-    NSLog(@"Email is %@valid", valid.boolValue ? @"" : @"NOT ");
-  }];
-  
-  RAC(self.loginButton, enabled) = emailIsValidSignal;
+  RAC(self.loginButton, enabled) = formIsValid;
 }
 
 
