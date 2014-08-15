@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D39E0EC3-86B2-4FC5-B394-899176CD3564</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RACItUp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E3509FDF-E252-407C-8821-ECAF17307968</key>
+		<string>ssh://github.com/ominiom/rac-it-up.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RACItUp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E3509FDF-E252-407C-8821-ECAF17307968</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/ominiom/rac-it-up.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E3509FDF-E252-407C-8821-ECAF17307968</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E3509FDF-E252-407C-8821-ECAF17307968</string>
+			<key>IDESourceControlWCCName</key>
+			<string>rac-it-up</string>
+		</dict>
+	</array>
+</dict>
+</plist>

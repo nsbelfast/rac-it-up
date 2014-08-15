@@ -39,22 +39,28 @@
 
 ***
 
+# Our Example
+
+^We'll build a simple login form with validation and show how the UI can respond dynamically to user input.
+
+^At the end, we'll show a more complex example by mocking up how the form could be sent via a network request reactively.
+
+- Login form
+- Field validation
+- Dynamic UI
+- Network request
+
+****
+
 # RACSignal
 
-Represents a event source, or stream of values delivered over time.
+Represents an event source, or stream of values delivered over time.
 
 Three types of event:
 
   * Next (Value)
   * Error
   * Completed
-
-***
-
-NOTE: I wonder should we try and keep code to an absolute minimum in the slides
-
-We can maybe explain concepts briefly through text/diagrams and then code right through an example?
-
 
 ***
 

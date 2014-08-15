@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C841501199E4BBE008E1E7D /* RMBLoginTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C841500199E4BBE008E1E7D /* RMBLoginTableViewController.m */; };
+		7C841503199E4D4B008E1E7D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C841502199E4D4B008E1E7D /* MainStoryboard.storyboard */; };
+		7C841505199E4E95008E1E7D /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C841504199E4E95008E1E7D /* Media.xcassets */; };
 		8798BBB0891F47C3855A0031 /* libPods-RACItUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 311786A5F587441D9CEA298D /* libPods-RACItUp.a */; };
 		AEE78C381994109300A276B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE78C371994109300A276B2 /* Foundation.framework */; };
 		AEE78C3A1994109300A276B2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE78C391994109300A276B2 /* CoreGraphics.framework */; };
@@ -22,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		311786A5F587441D9CEA298D /* libPods-RACItUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RACItUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C8414FF199E4BBE008E1E7D /* RMBLoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBLoginTableViewController.h; sourceTree = "<group>"; };
+		7C841500199E4BBE008E1E7D /* RMBLoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBLoginTableViewController.m; sourceTree = "<group>"; };
+		7C841502199E4D4B008E1E7D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7C841504199E4E95008E1E7D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		9944DB8FB53A4418BE003856 /* Pods-RACItUp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACItUp.xcconfig"; path = "Pods/Pods-RACItUp.xcconfig"; sourceTree = "<group>"; };
 		AEE78C341994109300A276B2 /* RACItUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACItUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE78C371994109300A276B2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +106,8 @@
 				AEE78C691994140700A276B2 /* main.m */,
 				AEE78C3F1994109300A276B2 /* RACItUp-Info.plist */,
 				AEE78C451994109300A276B2 /* RACItUp-Prefix.pch */,
+				7C841502199E4D4B008E1E7D /* MainStoryboard.storyboard */,
+				7C841504199E4E95008E1E7D /* Media.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -132,6 +141,8 @@
 			children = (
 				AEE78C771994264900A276B2 /* RMBPromptViewController.h */,
 				AEE78C781994264900A276B2 /* RMBPromptViewController.m */,
+				7C8414FF199E4BBE008E1E7D /* RMBLoginTableViewController.h */,
+				7C841500199E4BBE008E1E7D /* RMBLoginTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,6 +201,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C841505199E4E95008E1E7D /* Media.xcassets in Resources */,
+				7C841503199E4D4B008E1E7D /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE78C6E1994141200A276B2 /* RMBAppDelegate.m in Sources */,
+				7C841501199E4BBE008E1E7D /* RMBLoginTableViewController.m in Sources */,
 				AEE78C721994188200A276B2 /* UIAlertView+prompt.m in Sources */,
 				AEE78C751994195900A276B2 /* UIAlertView+confirmation.m in Sources */,
 				AEE78C7C1994D19D00A276B2 /* UIActivityIndicatorView+animateWithSignal.m in Sources */,
