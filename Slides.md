@@ -104,6 +104,8 @@ Map `NSString` to an `NSNumber` representing a `BOOL`
 - User feedback
 - Compact logic
 
+***
+
 # Macros (2)
 
 Macros like `RAC()` are handy shortcuts for UI state management
@@ -112,6 +114,46 @@ Logic automatically updates UI
 
 Like CocoaBindings for iOS and Mac
 
+***
+
+# Combining Signals (3)
+
+But what about validating the form as a whole?
+
+The operator `combineLatest:reduce` helps
+
+***
+
+# Tuples (3)
+
+The `combineLatest` operator takes an array
+
+Variable length
+
+So, `reduce` needs a tuple
+
+***
+
+# Logical Operators (4)
+
+Combined validation is a common pattern
+
+ReactiveCocoa offers methods for boolean signals
+
+Let's rewrite our form validation...
+
+***
+
+# Moar Logic (4)
+
+ReactiveCocoa offers lots of logic as signals
+- if:then:else:
+- and
+- or
+- not
+- switch
+
+***
 
 # Example (KVO)
 
@@ -232,11 +274,7 @@ EXAMPLE NEEDED
 EXAMPLE NEEDED
 ```
 
-***
 
-# Logic
-
-- if:else:, and, or, not & switch as signals!
 
 ```objectivec
 EXAMPLES NEEDED

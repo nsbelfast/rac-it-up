@@ -20,17 +20,24 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  // 3. Whole form validation
+  // 4. Concise form validation
   
-  RACSignal *emailTextSignal = [self.emailTextField rac_textSignal];
-  RACSignal *passwordTextSignal = [self.passwordTextField rac_textSignal];
+  id (^FieldIsValidMap)(NSString *) = ^(NSString *fieldText){
+    return @(fieldText.length > 0);
+	};
   
-  RACSignal *formIsValid = [RACSignal combineLatest:@[emailTextSignal, passwordTextSignal]
-                                             reduce:^id(NSString *emailText, NSString *passwordText) {
-                                               return @(emailText.length > 0 && passwordText.length > 0);
-                                             }];
+  RACSignal *emailValidSignal = [self.emailTextField.rac_textSignal map:FieldIsValidMap];
+  RACSignal *passwordValidSignal = [self.passwordTextField.rac_textSignal map:FieldIsValidMap];
   
-  RAC(self.loginButton, enabled) = formIsValid;
+  // (HINT: invert the logic by simply appending a -not!)
+  RACSignal *wholeFormIsValid = [[RACSignal combineLatest:@[emailValidSignal, passwordValidSignal]] and];
+  
+  RAC(self.loginButton, enabled) = wholeFormIsValid;
+  
+  // tint logic
+  RAC(self.navigationController.navigationBar, barTintColor) = [RACSignal if:wholeFormIsValid
+                                                                        then:[RACSignal return:[UIColor greenColor]]
+                                                                        else:[RACSignal return:[UIColor redColor]]];
 }
 
 
