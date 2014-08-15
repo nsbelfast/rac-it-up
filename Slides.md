@@ -155,40 +155,35 @@ ReactiveCocoa offers lots of logic as signals
 
 ***
 
-# Example (KVO)
+# Target:selector pattern is for the bin (5)
 
-```objectivec
-RACObserve(self, firstName)
-```
-returns a signal representing future changes
-to the `firstName` property.
+^Ok, so notification center has blocks but still...
+
+- UIControlEvent
+- RACCommand
+- Timers
+- NSNotificationCenter
+- weakify/strongify macros are helpful
+
+***
+
+# Don't retain your delegates, release yourself now (5)
+
+^Many more available, e.g. action sheets
+^We'll probably get a solution for the return-value-delegate-type issue in 3.0
+
+For example:
+
+- UIGestureRecogniser
+- UIAlertView
+- Note: can't be used if delegate method returns a value :pensive:
+
 
 ***
 
-# Example (KVO)
 
-This can be subscribed to as shown before
 
-```objectivec
-[RACObserve(self, name) subscribeNext:^(NSString *name) {
-	NSLog(@"Changed name to: %@", name);
-}];
-```
 
-# Example (KVO)
-
-Implementing dependent or computed properties through KVO:
-
-```objectivec
-RAC(self, fullName) = [RACSignal combineLatest:@[
-  RACObserve(self, firstName),
-  RACObserve(self, lastName)
-] reduce:^(NSString *firstName, NSString *lastName) {
-  return [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-}];
-```
-
-***
 
 # Disposables
 
@@ -200,85 +195,6 @@ From the previous examples, removing KVO or notification observers added.
 Can be useful for cancelling any ongoing work.
 
 E.g. a signal that represents a network request would cancel the request.
-
-***
-
-# Categories on Cocoa classes
-
-Provides signal interfaces for commonly used classes
-
-***
-
-# Example `NSNotificationCenter`
-
-```objectivec
-#import <NSNotificationCenter+RACSupport.h>
-```
-
-```objectivec
-[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardDidShowNotification object:nil];
-```
-
-Returns an `RACSignal` which will send notifications.
-
-***
-
-# Combining to derive state
-
-```objectivec
-RACSignal *keyboardShowingSignal = [RACSignal merge:@[
-  [[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardWillShowNotification object:nil] mapReplace:@YES],
-  [[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardDidHideNotification object:nil] mapReplace:@NO]
-]];
-
-// Hide someView while the keyboard displays
-RAC(self.someView, hidden) = keyboardShowingSignal;
-
-```
-
-***
-
-# Tuples
-
-- Combined signals can be reduced
-- Result is a tuple with the same number of arguments as input signals
-
-```objectivec
-EXAMPLE NEEDED
-```
-
-***
-
-# Break away from the delegate pattern
-
-^We'll probably get a solution for the return-value-delegate-type issue in 3.0
-
-For example:
-
-- UIControlEvent
-- UIGestureRecogniser
-- UIAlertView
-- Note: can't be used if delegate method returns a value :pensive:
-
-```objectivec
-EXAMPLE NEEDED
-```
-
-***
-
-# Target:selector pattern is for the bin :thumbsdown:
-
-- UIControlEventTouchUpInside
-
-```objectivec
-EXAMPLE NEEDED
-```
-
-
-
-```objectivec
-EXAMPLES NEEDED
-```
 
 ***
 

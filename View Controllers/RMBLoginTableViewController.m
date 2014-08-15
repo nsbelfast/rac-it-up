@@ -32,12 +32,39 @@
   // (HINT: invert the logic by simply appending a -not!)
   RACSignal *wholeFormIsValid = [[RACSignal combineLatest:@[emailValidSignal, passwordValidSignal]] and];
   
-  RAC(self.loginButton, enabled) = wholeFormIsValid;
   
-  // tint logic
-  RAC(self.navigationController.navigationBar, barTintColor) = [RACSignal if:wholeFormIsValid
-                                                                        then:[RACSignal return:[UIColor greenColor]]
-                                                                        else:[RACSignal return:[UIColor redColor]]];
+  // 5. No delegates, or target:selector patterns
+  
+  @weakify(self);
+  self.loginButton.rac_command = [[RACCommand alloc] initWithEnabled:wholeFormIsValid
+                                                         signalBlock:^RACSignal *(id input) {
+                                                           @strongify(self);
+                                                           return [self login];
+                                                         }];
+  
+  RACSignal *keyboardShowingSignal = [RACSignal merge:@[[[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardWillShowNotification object:nil] mapReplace:@YES],
+                                                        [[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardDidHideNotification object:nil] mapReplace:@NO]
+                                                        ]];
+  [keyboardShowingSignal subscribeNext:^(NSNumber *keyboardIsOnScreen) {
+    // look how easy this is! how would we even have done this before?
+    NSLog(@"Keyboard is %@showing", keyboardIsOnScreen.boolValue ? @"" : @"not ");
+  }];
+}
+
+- (RACSignal *)login {
+  return [[RACSignal.empty delay:5] doCompleted:^{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log in failed"
+                                                    message:@"You suck"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Sadface"
+                                          otherButtonTitles:@"No, I don't", nil];
+    
+    [alert.rac_buttonClickedSignal subscribeNext:^(NSNumber *buttonIndex) {
+      NSLog(@"Alert clicked button at index: %@", buttonIndex);
+    }];
+    
+    [alert show];
+  }];
 }
 
 
