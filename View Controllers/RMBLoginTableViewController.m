@@ -19,6 +19,14 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  // 1. A basic signal with a subscription
+  
+  RACSignal *emailTextSignal = [self.emailTextField rac_textSignal];
+  [emailTextSignal subscribeNext:^(id x) {
+    NSLog(@"Email text field: %@", x);
+  }];
+  
+  
   
 }
 
