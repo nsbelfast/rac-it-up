@@ -64,19 +64,54 @@ Three types of event:
 
 ***
 
-# Subscription
+# Subscription (1)
 
-Each type of event received from a signal is delivered to its subscribers.
+Each event for a signal is delivered to its subscribers.
 
-Can be as simple as a block:
+Most often used is `subscribeNext:`
 
-```objectivec
-[[[RACSignal empty] delay:5] subscribeCompleted:^{
-	NSLog(@"Time's up!");
-}];
-```
+It takes a block which is executed for every value received
 
 ***
+
+# Subscription (1)
+
+This is like KVO but for common UIKit elements!
+
+ReactiveCocoa provides categories to help like `rac_textSignal` for `UITextField`
+
+Let's see how this works...
+
+***
+
+# Operations (2)
+
+^ Form validation
+
+^ Signals are lazy (or cold), so you can compose everything before running it
+
+Lots of signal operators available.
+
+We can use `map:` to help with form validation
+
+***
+
+# Operations (2)
+
+Map `NSString` to an `NSNumber` representing a `BOOL`
+
+- UI state management
+- User feedback
+- Compact logic
+
+# Macros (2)
+
+Macros like `RAC()` are handy shortcuts for UI state management
+
+Logic automatically updates UI
+
+Like CocoaBindings for iOS and Mac
+
 
 # Example (KVO)
 

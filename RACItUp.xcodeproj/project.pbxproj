@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		311786A5F587441D9CEA298D /* libPods-RACItUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RACItUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C8414FF199E4BBE008E1E7D /* RMBLoginTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMBLoginTableViewController.h; sourceTree = "<group>"; };
-		7C841500199E4BBE008E1E7D /* RMBLoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBLoginTableViewController.m; sourceTree = "<group>"; };
+		7C841500199E4BBE008E1E7D /* RMBLoginTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMBLoginTableViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		7C841502199E4D4B008E1E7D /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7C841504199E4E95008E1E7D /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		9944DB8FB53A4418BE003856 /* Pods-RACItUp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RACItUp.xcconfig"; path = "Pods/Pods-RACItUp.xcconfig"; sourceTree = "<group>"; };

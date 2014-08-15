@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Login Table View Controller - Login-->
+        <!--Login Table View Controller - RAC It Up-->
         <scene sceneID="mYh-af-V0s">
             <objects>
                 <tableViewController id="nnV-KE-Yez" customClass="RMBLoginTableViewController" sceneMemberID="viewController">
@@ -68,9 +68,12 @@
                             <outlet property="delegate" destination="nnV-KE-Yez" id="LlQ-fV-eYp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Login" id="0Ea-r0-xR7"/>
+                    <navigationItem key="navigationItem" title="RAC It Up" id="0Ea-r0-xR7">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="UYo-8w-z95"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="7dg-1Q-Ub0" id="MHi-8Y-oGm"/>
+                        <outlet property="loginButton" destination="UYo-8w-z95" id="hcR-Wt-mKQ"/>
                         <outlet property="passwordTextField" destination="DmA-BJ-hTn" id="jqx-eX-5do"/>
                     </connections>
                 </tableViewController>

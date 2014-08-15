@@ -11,6 +11,7 @@
 @interface RMBLoginTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
 @end
 
@@ -22,12 +23,18 @@
   // 1. A basic signal with a subscription
   
   RACSignal *emailTextSignal = [self.emailTextField rac_textSignal];
-  [emailTextSignal subscribeNext:^(id x) {
-    NSLog(@"Email text field: %@", x);
+  
+  // 2. Validate the email as the user types
+  
+  RACSignal *emailIsValidSignal = [emailTextSignal map:^id(NSString *value) {
+    return @(value.length > 0);
   }];
   
+  [emailIsValidSignal subscribeNext:^(NSNumber *valid) {
+    NSLog(@"Email is %@valid", valid.boolValue ? @"" : @"NOT ");
+  }];
   
-  
+  RAC(self.loginButton, enabled) = emailIsValidSignal;
 }
 
 
