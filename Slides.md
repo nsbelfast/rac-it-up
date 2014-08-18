@@ -120,17 +120,17 @@ Like CocoaBindings for iOS and Mac
 
 But what about validating the form as a whole?
 
-The operator `combineLatest:reduce` helps
+The operator `combineLatest:reduce:` helps
 
 ***
 
 # Tuples (3)
 
-The `combineLatest` operator takes an array
+The `combineLatest:` operator takes an array
 
 Variable length
 
-So, `reduce` needs a tuple
+So, `reduce:` needs a tuple
 
 ***
 
@@ -163,7 +163,7 @@ ReactiveCocoa offers lots of logic as signals
 - RACCommand
 - Timers
 - NSNotificationCenter
-- weakify/strongify macros are helpful
+- @weakify/@strongify macros are helpful
 
 ***
 
@@ -183,12 +183,13 @@ For example:
 
 # Collections (6)
 
+^Underscore AND RAC - Why not use both?
+
 - Some other libs provide collection operations, e.g. Underscore
-- Why not use both?
-- filtering, mapping
 - Working with signals allows for chaining though
+- Filtering, mapping etc.
 - Collections are treated as streams
-- Execution is lazy
+- Lazily executed
 
 ***
 
@@ -201,7 +202,7 @@ A subscription wraps a number of disposables
 
 Can be useful for cancelling any ongoing work.
 
-E.g. a signal that represents a network request would cancel the request.
+E.g. cancelling an ongoing network request.
 
 ***
 
@@ -227,13 +228,15 @@ E.g. a network operation that needs to do a number of fetches
 
 ***
 
-# Pitfalls
+# Downsides
+
+^Timers: the timing aspect seems well suited but not for precision
 
 Some places, ReactiveCocoa doesn't offer **huge** benefit as it requires additonal management
 
-For example table view cell reuse
+E.g. table view cell reuse & timers
 
-Or timers: the timing aspect seems well suited but not for precision
+And no Swift support... yet.
 
 
 ***
@@ -244,3 +247,10 @@ Or timers: the timing aspect seems well suited but not for precision
 - AFNetworking-RACExtensions
 
 etc..
+
+***
+
+# That's all folks
+#### Feel free to get in touch!
+#### @ominiom
+#### @imnk
