@@ -6,9 +6,10 @@
 # ReactiveCocoa
 
 ^3.0 coming which will deprectate some of this
+^Work on 3.0 was in progress when Swift was introduced, the new 3.0 will see most reimplemented in Swift, with bridging headers for use from Objective-C
 
 - Functional reactive programming framework for ObjC
-- Currently 2.0
+- Currently 2.3.1
 - Inspired by Reactive Extensions
 - Alternative to traditional KVO paradigm
 
@@ -98,6 +99,9 @@ We can use `map:` to help with form validation
 
 # Operations (2)
 
+^ Map takes a transformation block which is applied to each value sent on the signal
+^ In our example we'll examine the content of the email text field and map it to a BOOL representing its validity
+
 Map `NSString` to an `NSNumber` representing a `BOOL`
 
 - UI state management
@@ -107,6 +111,9 @@ Map `NSString` to an `NSNumber` representing a `BOOL`
 ***
 
 # Macros (2)
+
+^ RAC is a shortcut macro which allows updating a property on an object with values sent on a signal
+^ RACObserve performs KVO on a property and returns a signal of all values resulting from property changes
 
 Macros like `RAC()` are handy shortcuts for UI state management
 
@@ -124,9 +131,13 @@ The operator `combineLatest:reduce` helps
 
 ***
 
-# Tuples (3)
+# Combining with tuples (3)
 
-The `combineLatest` operator takes an array
+^ `combineLatest:` takes an array of inputs signals, and returns a signal that when any input signal sends a value sends a tuple containing the latest value sent by each.
+^ Could use `map:` and receive and unpack a tuple to operate on.
+^ This is a common use case though, `combineLatest:reduce:` will take a block with as many arguments as input signals
+
+The `combineLatest:` operator takes an array
 
 Variable length
 
@@ -240,7 +251,15 @@ Or timers: the timing aspect seems well suited but not for precision
 
 # Extensions
 
-- ReactiveCoreData
-- AFNetworking-RACExtensions
+^ Many efforts to bring existing frameworks into the reactive world, replacing delegates with signals, etc
 
-etc..
+^ Core Data - ReactiveCoreData
+^ HTTP client - AFNetworking-RACExtensions
+^ ReactiveCocoaLayout - A work in progress with an interesting approach / alternative to auto layout, using signals and operations to express layout changes, animations etc
+
+- HTTP (AFNetworking-RACExtensions)
+- Core Data (ReactiveCoreData)
+- Core Bluetooth (ReactiveCoreBluetooth)
+- Layout (ReactiveCocoaLayout)
+
+[And Many More...](http://cocoapods.org/?q=reactive)
