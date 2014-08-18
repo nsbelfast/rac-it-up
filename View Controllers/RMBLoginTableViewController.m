@@ -49,6 +49,36 @@
     // look how easy this is! how would we even have done this before?
     NSLog(@"Keyboard is %@showing", keyboardIsOnScreen.boolValue ? @"" : @"not ");
   }];
+  
+  // 6. Collections
+  /*
+   RACSequence *results = [[strings.rac_sequence
+   filter:^ BOOL (NSString *str) {
+   return str.length >= 2;
+   }]
+   map:^(NSString *str) {
+   return [str stringByAppendingString:@"foobar"];
+   }];
+   */
+  
+  // 7. Networking & disposables
+  
+  // What can we log into though??
+  
+  /*
+   [[[[client logIn]
+   then:^{
+   return [client loadCachedMessages];
+   }]
+   flattenMap:^(NSArray *messages) {
+   return [client fetchMessagesAfterMessage:messages.lastObject];
+   }]
+   subscribeError:^(NSError *error) {
+   [self presentError:error];
+   } completed:^{
+   NSLog(@"Fetched all messages.");
+   }];
+   */
 }
 
 - (RACSignal *)login {

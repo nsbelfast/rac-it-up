@@ -181,21 +181,7 @@ For example:
 
 ***
 
-
-# Disposables
-
-^(i.e. cleanup to be performed when the subscription ends).
-^From the previous examples, removing KVO or notification observers added.
-
-A subscription wraps a number of disposables 
-
-Can be useful for cancelling any ongoing work.
-
-E.g. a signal that represents a network request would cancel the request.
-
-***
-
-# Collections
+# Collections (6)
 
 - Some other libs provide collection operations, e.g. Underscore
 - Why not use both?
@@ -204,9 +190,29 @@ E.g. a signal that represents a network request would cancel the request.
 - Collections are treated as streams
 - Execution is lazy
 
-```objectivec
-EXAMPLES NEEDED
-```
+***
+
+# Disposables (7)
+
+^(i.e. cleanup to be performed when the subscription ends).
+^From the previous examples, removing KVO or notification observers added.
+
+A subscription wraps a number of disposables
+
+Can be useful for cancelling any ongoing work.
+
+E.g. a signal that represents a network request would cancel the request.
+
+***
+
+# The chain will keep us together (7)
+
+^Or a background process that must write files, delete duplicates and then upload
+
+Chaining dependent, asynchronous operations allows for streamlining complex tasks
+
+E.g. a network operation that needs to do a number of fetches
+
 
 ***
 
@@ -218,25 +224,6 @@ EXAMPLES NEEDED
 - Repeats
 - Retrys
 - Throttling
-
-```objectivec
-EXAMPLES NEEDED
-```
-
-***
-
-# The chain is your friend
-
-Chaining dependent, asynchronous operations allows for streamlining complex tasks
-
-For example, a network operation that needs to do a number of fetches
-
-Or a background process that must write files, delete duplicates and then upload
-
-
-```objectivec
-SHOW A NETWORKING EXAMPLE WITH AFNETWORKING
-```
 
 ***
 
@@ -254,6 +241,6 @@ Or timers: the timing aspect seems well suited but not for precision
 # Extensions
 
 - ReactiveCoreData
+- AFNetworking-RACExtensions
 
 etc..
-
