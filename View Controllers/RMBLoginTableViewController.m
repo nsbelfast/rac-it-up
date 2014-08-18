@@ -11,6 +11,7 @@
 #import <RACAFNetworking.h>
 
 #import <UIAlertView+RACSignalSupport.h>
+#import "UINavigationItem+indicateActivityWithSignal.h"
 
 @interface RMBLoginTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -92,7 +93,10 @@
 - (RACSignal *)login {
   NSURLCredential *credential = [NSURLCredential credentialWithUser:self.emailTextField.text password:self.passwordTextField.text persistence:NSURLCredentialPersistenceNone];
 
-  return [[[self authenticateWithCredential:credential] catch:^(NSError *error) {
+  RACSignal *loginRequest = [self authenticateWithCredential:credential];
+  RACSignal *loginActivity = [self.navigationItem rmb_indicateActivityWithSignal:loginRequest];
+
+  return [[loginActivity catch:^(NSError *error) {
     NSHTTPURLResponse *response = error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey];
 
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Login failed" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
