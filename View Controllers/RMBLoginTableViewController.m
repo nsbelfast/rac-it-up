@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *loginButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 
 @property (nonatomic) AFHTTPRequestOperationManager *client;
 @end
@@ -42,12 +43,14 @@
   // 5. No delegates, or target:selector patterns
   
   @weakify(self);
-  self.loginButton.rac_command = [[RACCommand alloc] initWithEnabled:wholeFormIsValid
-                                                         signalBlock:^(UIButton *sender) {
-                                                           @strongify(self);
-
-                                                           return [self login];
-                                                         }];
+  RACCommand *loginCommand = [[RACCommand alloc] initWithEnabled:wholeFormIsValid
+                                                     signalBlock:^(UIButton *sender) {
+                                                       @strongify(self);
+                                                       // we'll wait 3 seconds for this example to simulate a slower connection
+                                                       return [[[RACSignal empty] delay:3] concat:[self login]];
+                                                     }];
+  
+  self.loginButton.rac_command = loginCommand;
   
   RACSignal *keyboardShowingSignal = [RACSignal merge:@[
                                        [[NSNotificationCenter.defaultCenter rac_addObserverForName:UIKeyboardWillShowNotification object:nil] mapReplace:@YES],
@@ -59,18 +62,11 @@
     NSLog(@"Keyboard is %@showing", keyboardIsOnScreen.boolValue ? @"" : @"not ");
   }];
   
-  // 6. Collections
-  /*
-   RACSequence *results = [[strings.rac_sequence
-   filter:^ BOOL (NSString *str) {
-   return str.length >= 2;
-   }]
-   map:^(NSString *str) {
-   return [str stringByAppendingString:@"foobar"];
-   }];
-   */
+  RAC(self.navigationItem, rightBarButtonItem) = [RACSignal if:[loginCommand executing]
+                                                          then:[RACSignal return:self.cancelButton]
+                                                          else:[RACSignal return:self.loginButton]];
   
-  // 7. Networking & disposables
+  // 6. Chaining dependent operations
 
   self.client = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://httpbin.org/"]];
   self.client.requestSerializer = [AFJSONRequestSerializer serializer];

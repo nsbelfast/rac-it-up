@@ -11,6 +11,7 @@
 - Currently 2.0
 - Inspired by Reactive Extensions
 - Alternative to traditional KVO paradigm
+- Created by GitHub & used in GitHub for Mac (Hi Coby!)
 
 ***
 
@@ -181,7 +182,7 @@ For example:
 
 ***
 
-# Collections (6)
+# Collections
 
 ^Underscore AND RAC - Why not use both?
 
@@ -193,7 +194,13 @@ For example:
 
 ***
 
-# Disposables (7)
+# Collections
+
+
+
+***
+
+# Disposables
 
 ^(i.e. cleanup to be performed when the subscription ends).
 ^From the previous examples, removing KVO or notification observers added.
@@ -206,7 +213,7 @@ E.g. cancelling an ongoing network request.
 
 ***
 
-# The chain will keep us together (7)
+# The chain will keep us together (6)
 
 ^Or a background process that must write files, delete duplicates and then upload
 
